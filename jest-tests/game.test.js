@@ -21,7 +21,7 @@ it('Requests an attack coordinate from a player', () => {
   // How do I do that when the space capsule bounces around other space capsules?
 });
 
-it('Can change player turns', () => {
+it('Updates and tracks the current player', () => {
   const testGame = game();
   expect(testGame.currentPlayer).toEqual(testGame.playerOne);
   testGame.switchTurns();
