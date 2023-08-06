@@ -1,4 +1,4 @@
-const game = require('../src/game');
+const game = require('../src/gameLoop');
 
 it('Starts a game', () => {
   const testGame = game();
