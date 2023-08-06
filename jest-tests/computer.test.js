@@ -2,7 +2,7 @@ const computer = require('../src/computer');
 
 it('Can make an attack on a board', () => {
   computer.makeAttack(1, 1);
-  expect(computer.attacks[1][1]).toBe('Attack made');
+  expect(computer.attackResults[1][1]).toBe('Attack made');
 });
 
 it('Does not attack a previously attacked square', () => {

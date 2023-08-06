@@ -10,15 +10,11 @@ const newPlayer = require('./player');
 
 const computerPlayer = newPlayer();
 
-computerPlayer.attack = (x, y) => {
-  return 'Attack made';
-};
-
 computerPlayer.checkAttack = function (x, y) {
-  if (this.attacks[x][y] !== undefined) {
+  if (this.attackResults[x][y] !== undefined) {
     return 'Already attacked this square';
   } else {
-    return attack(x, y);
+    return makeAttack(x, y);
   }
 };
 

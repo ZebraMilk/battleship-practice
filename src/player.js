@@ -5,25 +5,30 @@ const NewBoard = boardStuff.GameBoard;
 function Player() {
   const playerBoard = NewBoard();
 
-  const attacks = Array(BOARDSIZE);
+  const attackResults = Array(BOARDSIZE);
   for (let i = 0; i < BOARDSIZE; i++) {
-    attacks[i] = Array(BOARDSIZE);
+    attackResults[i] = Array(BOARDSIZE);
   }
 
   function takeAttack(x, y) {
     return playerBoard.receiveAttack(x, y);
   }
 
-  function makeAttack(x, y) {
+  function makeAttack() {
     // this is actually going to be the return value
     // from the receiveAttack function of the enemy board
+    // Does this need to wait on UI input for human players?
+    // Similarly, waits on AI decision?
+  }
 
-    attacks[x][y] = 'Attack made';
+  function updateAttackResults(x, y, result) {
+    return (attackResults[x][y] = result);
   }
 
   return {
     playerBoard,
-    attacks,
+    attackResults,
+    updateAttackResults,
     takeAttack,
     makeAttack,
   };

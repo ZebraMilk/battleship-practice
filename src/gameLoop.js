@@ -19,6 +19,10 @@ function Game() {
     }
   }
 
+  function getPlayerChoice(player) {
+    return { x, y };
+  }
+
   return {
     newGame,
     playerOne,
