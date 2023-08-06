@@ -17,8 +17,7 @@ function Player() {
   function makeAttack(x, y) {
     // this is actually going to be the return value
     // from the receiveAttack function of the enemy board
-    // pass this to the game controller? how?
-    //
+
     attacks[x][y] = 'Attack made';
   }
 
