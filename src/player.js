@@ -1,4 +1,4 @@
-const boardStuff = require('../src/board');
+const boardStuff = require("../src/board");
 const BOARDSIZE = boardStuff.BOARDSIZE;
 const NewBoard = boardStuff.GameBoard;
 
@@ -15,16 +15,11 @@ function Player() {
     return playerBoard.receiveAttack(x, y);
   }
 
-  function updateAttackResults(x, y, result) {
-    return (attackResults[x][y] = result);
-  }
+  function makeAttack(x, y) {
+    // this is actually going to be the return value
+    // from the receiveAttack function of the enemy board
 
-  function canAttack(x, y) {
-    if (this.attackResults[x][y] === undefined) {
-      return true;
-    } else {
-      return false;
-    }
+    attacks[x][y] = "Attack made";
   }
 
   return {

@@ -6,17 +6,19 @@ Computer only can see its board, its previous guesses and their results
 */
 
 // import Player from './player';
-const newPlayer = require('./player');
+const newPlayer = require("./player");
 
 const computerPlayer = newPlayer();
 
-computerPlayer.randomAttack = function () {
-  const x = Math.floor((Math.random() * 100000) % 10);
-  const y = Math.floor((Math.random() * 100000) % 10);
-  if (this.canAttack(x, y) === true) {
-    return { x, y, valid: true };
+computerPlayer.attack = (x, y) => {
+  return "Attack made";
+};
+
+computerPlayer.checkAttack = function (x, y) {
+  if (this.attacks[x][y] !== undefined) {
+    return "Already attacked this square";
   } else {
-    return { x, y, valid: false };
+    return makeAttack(x, y);
   }
 };
 
